@@ -12,7 +12,9 @@
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *, ...)
+int	ft_printf(const char *line, ...)
 {
-	
+	int line_len;
+
+	line_len = ft_strlen(line);
 }
