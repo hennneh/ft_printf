@@ -12,9 +12,26 @@
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *format, ...)
+int	ft_printf(const char *fmt, ...)
 {
-	int line_len;
+	va_list	args;
+	int		i;
+	int		printed;
 
-	line_len = ft_strlen(line);
+	va_start(args, fmt);
+	i = 0;
+	printed = 0;
+	while (fmt[i] != '\0')
+	{
+		if (ftm[i] == '%')
+			printed += flags_func(fmt, &i, args);
+		else
+		{
+			write(1, &fmt[i], 1);
+			i++;
+			printed++;
+		}
+	}
+	va_end(args);
+	return(printed);
 }
