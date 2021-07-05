@@ -16,4 +16,6 @@
 # include <unistd.h>
 # include <stdarg.h>
 
+int	ft_printf(char *fmt, ...);
+
 #endif
