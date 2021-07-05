@@ -2,15 +2,29 @@ CC = gcc
 FLAGS = -Wall -Werror -Wextra
 NAME = libftprintf.a
 
-PATH_LIBFT = ./libft
+LIBFT = ./libft
 
-SOURCES =	ft_printf.c \
-			ft_printf_utils.c
+SRCS =	ft_printf.c \
+		ft_printf_utils.c
+
+RM = rm -f
+
 all: $(NAME)
 
+$(NAME):
+	make re $(LIBFT)
+	$(CC) $(FLAGS) $(SRCS)
+	ar rc $(NAME)
+	ranlib $(NAME)
+
+%.o: %.c
+	$(CC) $(FLAGS) -c $< -o $(<:.c=.o)
+
 clean:
+	$(RM) $(OBJ)
 
 fclean:
+	$(RM) $(NAME)
 
 re: fclean all
 
