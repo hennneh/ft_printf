@@ -5,7 +5,8 @@ NAME = libftprintf.a
 LIBFT = ./libft
 
 SRCS =	ft_printf.c \
-		ft_printf_utils.c
+		ft_printf_utils.c \
+		ft_printf_hex.c 
 
 RM = rm -f
 
