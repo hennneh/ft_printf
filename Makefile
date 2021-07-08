@@ -4,16 +4,14 @@ NAME = libftprintf.a
 
 LIBFT = ./libft
 
-SRCS =	ft_printf.c \
-		ft_printf_utils.c \
-		ft_printf_hex.c 
+SRCS =	ft_printf.c
 
 RM = rm -f
 
 all: $(NAME)
 
 $(NAME):
-	make re $(LIBFT)
+	make re -C $(LIBFT)
 	$(CC) $(FLAGS) $(SRCS)
 	ar rc $(NAME)
 	ranlib $(NAME)
@@ -23,9 +21,11 @@ $(NAME):
 
 clean:
 	$(RM) $(OBJ)
+	make clean -C $(LIBFT)
 
 fclean:
 	$(RM) $(NAME)
+	make fclean -C $(LIBFT)
 
 re: fclean all
 

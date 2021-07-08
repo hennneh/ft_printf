@@ -12,6 +12,11 @@
 
 #include "ft_printf.h"
 
+int	flags_func(const char *fmt, int *i, va_list args)
+{
+	return (1);
+}
+
 int	ft_printf(const char *fmt, ...)
 {
 	va_list	args;
@@ -23,7 +28,7 @@ int	ft_printf(const char *fmt, ...)
 	printed = 0;
 	while (fmt[i] != '\0')
 	{
-		if (ftm[i] == '%')
+		if (fmt[i] == '%')
 			printed += flags_func(fmt, &i, args);
 		else
 		{
