@@ -14,6 +14,11 @@
 
 int	flags_func(const char *fmt, int *i, va_list args)
 {
+	struct	s_flags	flags;
+	int		printed;
+	(*i)++;
+	if (s[i] == c)
+		printed = ft_print_char(va_arg(args, int), flags);
 	return (1);
 }
 
