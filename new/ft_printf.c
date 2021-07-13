@@ -1,5 +1,11 @@
 #include "ft_printf.h"
 
+int	ft_printf_char(char f)
+{
+	write(1, &f, 1);
+	return (1);
+}
+
 int	check_flags(va_list args, const char *fmt, int *i)
 {
 	(*i)++;
@@ -7,6 +13,11 @@ int	check_flags(va_list args, const char *fmt, int *i)
 	{
 		write(1, "%", 1);
 		return (1);
+	}
+	else if (fmt[*i] == 'c')
+	{
+		ft_printf_char(va_arg(args, int));
+		(*i)++;
 	}
 	return (0);
 }
