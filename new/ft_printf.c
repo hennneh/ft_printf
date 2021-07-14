@@ -12,10 +12,9 @@ void	ft_print_s(char *s)
 	}
 }
 
-int	ft_print_c(char f)
+void	ft_print_c(char f)
 {
 	write(1, &f, 1);
-	return (1);
 }
 
 int	check_flags(va_list args, const char *fmt, int *i)
