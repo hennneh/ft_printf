@@ -1,5 +1,24 @@
 #include "ft_printf.h"
 
+void	ft_print_id(int i)
+{
+	char	c;
+
+	if (i < 0)
+		write(1, "-", 1);
+	if (i == -2147483648)
+	{
+		write(1, "2", 1);
+		i = -147483648;
+	}
+	if (i < 0 )
+		i *= -1;
+	if (i / 10 > 0)
+		ft_print_id(i / 10);
+	c = i % 10 + '0';
+	write(1, &c, 1);
+}
+
 void	ft_print_s(char *s)
 {
 	int	i;
@@ -33,6 +52,11 @@ int	check_flags(va_list args, const char *fmt, int *i)
 	else if (fmt[*i] == 's')
 	{
 		ft_print_s(va_arg(args, char *));
+		(*i)++;
+	}
+	else if (fmt[*i] == 'd' || fmt[*i] == 'i')
+	{
+		ft_print_id(va_arg(args, int));
 		(*i)++;
 	}
 	return (0);
