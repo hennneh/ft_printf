@@ -4,7 +4,7 @@ int     ft_printf(const char *fmt, ...);
 
 int	main(void)
 {
-	char	d = 'b';
-	ft_printf("character: %c\n", d);
+	char	*d = "hello world";
+	ft_printf("string: %s\n", d);
 	return (0);
 }

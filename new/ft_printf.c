@@ -1,6 +1,18 @@
 #include "ft_printf.h"
 
-int	ft_printf_char(char f)
+void	ft_print_s(char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		write(1, &s[i], 1);
+		i++;
+	}
+}
+
+int	ft_print_c(char f)
 {
 	write(1, &f, 1);
 	return (1);
@@ -16,31 +28,37 @@ int	check_flags(va_list args, const char *fmt, int *i)
 	}
 	else if (fmt[*i] == 'c')
 	{
-		ft_printf_char(va_arg(args, int));
+		ft_print_c(va_arg(args, int));
+		(*i)++;
+	}
+	else if (fmt[*i] == 's')
+	{
+		ft_print_s(va_arg(args, char *));
 		(*i)++;
 	}
 	return (0);
 }
+
 int	ft_printf(const char *fmt, ...)
 {
 	va_list	args;
-	int		printed;
+	int		ret;
 	int		i;
 
 	va_start(args, fmt);
-	printed = 0;
+	ret = 0;
 	i = 0;
 	while (fmt[i] != '\0')
 	{
 		if (fmt[i] == '%')
-			printed += check_flags(args, fmt, &i);
+			ret += check_flags(args, fmt, &i);
 		else
 		{
 			write(1, &fmt[i], 1);
 			i++;
-			printed++;
+			ret++;
 		}
 	}
 	va_end(args);
-	return (printed);
+	return (ret);
 }
