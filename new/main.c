@@ -13,5 +13,6 @@ int	main(void)
 	ft_printf("string: %s\n", d);
 	ft_printf("integer: %i\n", i);
 	ft_printf("decimal: %d\n", j);
+	ft_printf("all: %c\n%s\n%i\n%d\n", c, d, i, j);
 	return (0);
 }
