@@ -1,5 +1,10 @@
 #include "ft_printf.h"
 
+void	ft_print_u(unsigned int i)
+{
+	
+}
+
 void	ft_print_id(int i)
 {
 	char	c;
