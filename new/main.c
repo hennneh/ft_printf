@@ -8,7 +8,7 @@ int	main(void)
 	char	c = 'a';
 	int		i = 42069;
 	int		j = 69420;
-	unsigned int	k = 666;
+	unsigned int	k = 4294967295;
 
 	ft_printf("character: %c\n", c);
 	ft_printf("string: %s\n", d);
