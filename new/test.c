@@ -1,9 +1,25 @@
 #include <stdio.h>
+#include <unistd.h>
+
+void	ft_print_x(unsigned int nbr)
+{
+	char	c;
+	int		i;
+	char	*s;
+
+	s = "0123456789abcdef";
+	i = nbr % 16;
+	if (nbr / 16 > 0)
+		ft_print_x(nbr / 16);
+	write(1, &s[i], 1);
+}
 
 int	main(void)
 {
-	int	i = -1;
+	unsigned int	i = 7562;
 
-	printf("%u\n", i);
+	printf("value to be printed: %i\nhex-value: %x\n", i, i);
+	ft_print_x(i);
+	printf("\n");
 	return (0);
 }
