@@ -3,7 +3,6 @@
 
 void	ft_print_x(unsigned int nbr)
 {
-	char	c;
 	int		i;
 	char	*s;
 
@@ -19,6 +18,7 @@ int	main(void)
 	unsigned int	i = 7562;
 
 	printf("value to be printed: %i\nhex-value: %x\n", i, i);
+	write(1, "my code: ", 9);
 	ft_print_x(i);
 	printf("\n");
 	return (0);

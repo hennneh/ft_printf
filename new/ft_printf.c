@@ -1,5 +1,17 @@
 #include "ft_printf.h"
 
+void    ft_print_x(unsigned int nbr)
+{
+        int		i;
+        char	*s;
+
+        s = "0123456789abcdef";
+        i = nbr % 16;
+        if (nbr / 16 > 0)
+                ft_print_x(nbr / 16);
+        write(1, &s[i], 1);
+}
+
 void	ft_print_u(unsigned int i)
 {
 	char	c;
@@ -71,6 +83,11 @@ int	check_flags(va_list args, const char *fmt, int *i)
 	else if (fmt[*i] == 'u')
 	{
 		ft_print_u(va_arg(args, unsigned int));
+		(*i)++;
+	}
+	else if (fmt[*i] == 'x')
+	{
+		ft_print_x(va_arg(args, unsigned int));
 		(*i)++;
 	}
 	return (0);
