@@ -2,7 +2,11 @@
 
 void	ft_print_u(unsigned int i)
 {
-	
+	char	c;
+	if (i / 10 > 0 )
+		ft_print_u(i / 10);
+	c = i % 10 + '0';
+	write(1, &c, 1);
 }
 
 void	ft_print_id(int i)
@@ -62,6 +66,11 @@ int	check_flags(va_list args, const char *fmt, int *i)
 	else if (fmt[*i] == 'd' || fmt[*i] == 'i')
 	{
 		ft_print_id(va_arg(args, int));
+		(*i)++;
+	}
+	else if (fmt[*i] == 'u')
+	{
+		ft_print_u(va_arg(args, unsigned int));
 		(*i)++;
 	}
 	return (0);
