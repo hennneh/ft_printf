@@ -13,7 +13,6 @@ int	main(void)
 
 	ft_printf("character: %c\n", c);
 	ft_printf("string: %s\n", d);
-	ft_printf("string again: %s\n", d);
 	ft_printf("integer: %i\n", i);
 	ft_printf("decimal: %d\n", j);
 	ft_printf("unsigned: %u\n", k);
