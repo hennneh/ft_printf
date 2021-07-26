@@ -7,10 +7,11 @@ int	main(void)
 {
 	char	*d = "hello world";
 	char	c = 'a';
-	int		i = 42069;
-	int		j = 69420;
+	int		i = 1;
+	int		j = 9;
 	unsigned int	k = 4294967295;
 
+	ft_printf("other: %i\n%d\n", j, i);
 	ft_printf("character: %c\n", c);
 	ft_printf("string: %s\n", d);
 	ft_printf("integer: %i\n", i);
