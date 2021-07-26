@@ -43,12 +43,14 @@ void	ft_print_id(int i)
 void	ft_print_s(char *s)
 {
 	int	i;
+	char	*tmp;
 
+	tmp = s;
 	i = 0;
-	while (s[i] != '\0')
+	while (*tmp)
 	{
-		write(1, &s[i], 1);
-		i++;
+		write(1, tmp, 1);
+		tmp++;
 	}
 }
 
