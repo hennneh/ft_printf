@@ -5,11 +5,6 @@ int	ft_printf(const char *format, ...);
 
 int	main(void)
 {
-	int	i;
-	int *pi;
-
-	i = 0;
-	pi = &i;
 	ft_printf("pointer test: %p\n", 0);
 	return (0);
 }
