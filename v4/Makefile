@@ -3,13 +3,13 @@ NAME=libftprintf.a
 LIB=./libft
 LIBFT = $(LIB)/libft.a
 
-SRC=char.c \
-	hex_l.c \
-	hex_u.c \
-	int.c \
-	ptr.c \
-	str.c \
-	unsigned.c \
+SRC=print_c.c \
+	print_s.c \
+	print_p.c \
+	print_i.c \
+	print_u.c \
+	print_x_lo.c \
+	print_x_up.c \
 	ft_printf.c 
 
 OBJECTS=$(SRC:.c=.o)
