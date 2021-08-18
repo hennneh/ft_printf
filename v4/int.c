@@ -32,7 +32,7 @@ static size_t	ft_len(long n)
 	return (len);
 }
 
-int	format_int(va_list *arguments)
+int	print_i(va_list *arguments)
 {
 	int		number;
 

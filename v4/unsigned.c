@@ -54,7 +54,7 @@ static void	ft_put_unsigned(unsigned int n, int fd)
 	ft_putstr_fd(s, fd);
 }
 
-int	format_unsigned(va_list *arguments)
+int	print_u(va_list *arguments)
 {
 	unsigned int	target;
 

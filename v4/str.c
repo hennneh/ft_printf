@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	format_str(va_list *arguments)
+int	print_s(va_list *arguments)
 {
 	char	*target;
 	int		length;

@@ -22,7 +22,7 @@ static int	treat_zero(long int number)
 	return (0);
 }
 
-int	format_hexa_u(va_list *arguments)
+int	print_x_up(va_list *arguments)
 {
 	char		hexa_num[100];
 	int			i;

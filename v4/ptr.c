@@ -22,7 +22,7 @@ static int	treat_zero(unsigned long number)
 	return (0);
 }
 
-int	format_ptr(va_list *arguments)
+int	print_p(va_list *arguments)
 {
 	unsigned long	number;
 	char			hex[11];
