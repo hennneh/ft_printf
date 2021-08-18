@@ -25,7 +25,7 @@ static int	treat_zero(unsigned long number)
 int	format_ptr(va_list *arguments)
 {
 	unsigned long	number;
-	char			hex[100];
+	char			hex[11];
 	int				i;
 	int				j;
 	int				temp;
