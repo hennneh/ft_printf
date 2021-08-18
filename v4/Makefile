@@ -21,24 +21,24 @@ FLAGS=-Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(OBJECTS)
-	@cp $(LIBFT) $@
-	@ar rcs $(NAME) $(OBJECTS)
+	cp $(LIBFT) $@
+	ar rcs $(NAME) $(OBJECTS)
 
 $(LIBFT):
-	@make -C $(LIB)
+	make -C $(LIB)
 
 %.o: %.c %.h
-	@$(CC) $(FLAGS) $< -c -o $@
+	$(CC) $(FLAGS) $< -c -o $@
 
 clean:
-	@make clean -C $(LIB)
-	@rm -f $(OBJECTS)
+	make clean -C $(LIB)
+	rm -f $(OBJECTS)
 
 fclean: clean
-	@make fclean -C $(LIB)
-	@rm -f $(NAME)
+	make fclean -C $(LIB)
+	rm -f $(NAME)
 
 re: fclean all
 
 so: $(OBJECTS)
-	@$(CC) $(FLAGS) -shared -fpic $(OBJECTS) -o $(NAME:.a=.so)
+	$(CC) $(FLAGS) -shared -fpic $(OBJECTS) -o $(NAME:.a=.so)
