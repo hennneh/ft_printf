@@ -39,6 +39,3 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
-so: $(OBJECTS)
-	$(CC) $(FLAGS) -shared -fpic $(OBJECTS) -o $(NAME:.a=.so)
