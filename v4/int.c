@@ -34,10 +34,10 @@ static size_t	ft_len(long n)
 
 int	format_int(va_list *arguments)
 {
-	int		target;
+	int		number;
 
-	target = va_arg(*arguments, int);
-	ft_putnbr_fd(target, 1);
-	target = ft_len((long)target);
-	return (target);
+	number = va_arg(*arguments, int);
+	ft_putnbr_fd(number, 1);
+	number = ft_len((long)number);
+	return (number);
 }

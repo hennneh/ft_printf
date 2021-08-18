@@ -12,13 +12,13 @@
 
 #include "ft_printf.h"
 
-static int	cases(const char *format, int current_index, va_list *arguments)
+static int	cases(const char *format, int current_char, va_list *arguments)
 {
 	char	next_char;
 	int		length;
 
 	length = 1;
-	next_char = format[current_index + 1];
+	next_char = format[current_char + 1];
 	if (next_char == 0 || next_char == '\0')
 		return (0);
 	if (next_char == 'c')
