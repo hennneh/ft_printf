@@ -56,10 +56,10 @@ static void	ft_put_unsigned(unsigned int n, int fd)
 
 int	print_u(va_list *arguments)
 {
-	unsigned int	target;
+	unsigned int	number;
 
-	target = va_arg(*arguments, unsigned int);
-	ft_put_unsigned(target, 1);
-	target = ft_len((long)target);
-	return (target);
+	number = va_arg(*arguments, unsigned int);
+	ft_put_unsigned(number, 1);
+	number = ft_len((long)number);
+	return (number);
 }
