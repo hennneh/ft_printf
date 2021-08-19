@@ -24,7 +24,7 @@ static int	treat_zero(long int number)
 
 int	print_x_lo(va_list *arguments)
 {
-	char		hexa_num[100];
+	char		hex[100];
 	int			i;
 	int			j;
 	int			temp;
@@ -41,11 +41,11 @@ int	print_x_lo(va_list *arguments)
 			temp = temp + 48;
 		else
 			temp = temp + 87;
-		hexa_num[i++] = temp;
+		hex[i++] = temp;
 		number = number / 16;
 	}
 	j = i;
 	while (--j > 0)
-		ft_putchar_fd(hexa_num[j], 1);
+		ft_putchar_fd(hex[j], 1);
 	return (i - 1);
 }
