@@ -18,7 +18,7 @@ static size_t	ft_len(long n)
 
 	len = 0;
 	if (n == 0)
-		len = 1;
+		len++;
 	if (n < 0)
 	{
 		n = n * -1;

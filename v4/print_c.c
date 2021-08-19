@@ -14,9 +14,9 @@
 
 int	print_c(va_list *arguments)
 {
-	char	target;
+	char	to_print;
 
-	target = va_arg(*arguments, int);
-	ft_putchar_fd(target, 1);
+	to_print = va_arg(*arguments, int);
+	ft_putchar_fd(to_print, 1);
 	return (1);
 }
