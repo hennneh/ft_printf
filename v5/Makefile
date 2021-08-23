@@ -14,6 +14,7 @@ SRCS =	ft_printf.c \
 		print_u.c \
 		print_x_lo.c \
 		print_x_up.c \
+		utils.c \
 
 OBJS = $(SRCS:.c=.o)
 

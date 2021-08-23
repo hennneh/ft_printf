@@ -15,6 +15,7 @@
 
 # include <stdarg.h>
 # include <stddef.h>
+# include <unistd.h>
 
 int		ft_printf(const char *format, ...);
 int		print_c(va_list *arguments);
