@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-static int	treat_zero(unsigned long number)
+static int	treat_zero(unsigned long long number)
 {
 	if (number == 0)
 	{
@@ -24,14 +24,14 @@ static int	treat_zero(unsigned long number)
 
 int	print_p(va_list *arguments)
 {
-	unsigned long	number;
-	char			hex[11];
-	int				i;
-	int				j;
-	int				temp;
+	unsigned long long	number;
+	char				hex[100];
+	int					i;
+	int					j;
+	int					temp;
 
 	i = 1;
-	number = va_arg(*arguments, unsigned long);
+	number = va_arg(*arguments, unsigned long long);
 	if (treat_zero(number))
 		return (3);
 	while (number != 0)
